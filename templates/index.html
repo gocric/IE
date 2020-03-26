@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>Search PDF</title>
+</head>
+<body>
+    <input type="text" id="searchText"/>
+    <button>Search</button>
+    <div id="output"></div>
+<script>
+    $(function(){
+    $("button").on("click", function() {
+            searchText= $('#searchText').val()
+             $("#output").html("searching");
+             $.post( "http://127.0.0.1:5000/search/"+searchText, function(result){
+                    $("#output").html(result);
+                }
+            );
+        });
+    })
+</script>
+</body>
+</html>

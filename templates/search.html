@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+   <body>
+
+         <table border = 1>
+             <tr>
+                <th> <h1>Search result for "{{ name }}"</h1>
+            </tr>
+         {% for value in data %}
+            <tr>
+                <th> <a href='{{ value[0] }}'>{{ value[1] }}</a> </th>
+            </tr>
+         {% endfor %}
+      </table>
+   </body>
+</html>
